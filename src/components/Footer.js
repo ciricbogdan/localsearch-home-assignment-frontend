@@ -1,5 +1,4 @@
-import React from 'react'
-
+// Footer is the footer component
 const Footer = () => {
     return (
         <div className="footer">

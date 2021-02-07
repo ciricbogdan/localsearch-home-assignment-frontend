@@ -1,12 +1,21 @@
-import { useState } from 'react'
+import {useState} from 'react'
 
-const PlaceSearch = ({ search }) => {
+// PlaceSearch search is a component holding a form that will perform a search, which is passed as a prop,
+// with the inputted id
+const PlaceSearch = ({search}) => {
 
+    // stateful id var
     const [id, setID] = useState('')
 
+    // on form submit action
     const onSubmit = (e) => {
-        
+
         e.preventDefault()
+
+        if (id === '') {
+            alert("Place ID is mandatory")
+            return
+        }
 
         search(id)
     }
@@ -23,7 +32,7 @@ const PlaceSearch = ({ search }) => {
                 />
             </div>
 
-            <input type='submit' value='Search' className='btn btn-block' />
+            <input type='submit' value='Search' className='btn btn-block'/>
         </form>
     )
 }
